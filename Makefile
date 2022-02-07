@@ -6,14 +6,14 @@ CC = cc
 LDFLAGS = ${LIBS}
 CFLAGS = -D_DEFAULT_SOURCE -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS}
 
-SRC = debugger.c
+SRC = promody.c common.c
 
 OBJ = ${SRC:.c=.o}
 
-all: debugger options
+all: promody options
 
 options:
-	@echo debugger build options:
+	@echo promody build options:
 	@echo "CFLAGS	=${CFLAGS}"
 	@echo "LDFLAGS	=${LDFLAGS}"
 	@echo "CC	=${CC}"
@@ -21,9 +21,9 @@ options:
 .c.o:
 	${CC} -c ${CFLAGS} $<
 
-debugger: ${OBJ}
+promody: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
 
 clean: 
-	rm debugger *.o
+	rm promody *.o
 
