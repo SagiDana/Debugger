@@ -25,7 +25,6 @@ void promody_log(char* msg);
 #define LENGTH(x) (sizeof(x) / sizeof(x[0]))
 
 #define COL_SIZE (8)
-
-void promody_hexdump(unsigned char* buf, unsigned int size);
+extern void promody_hexdump(unsigned char* buf, unsigned int size);
 
 #endif
