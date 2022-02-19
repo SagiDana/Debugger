@@ -46,12 +46,12 @@ int parse_args( int argc,
 
 int action_breakpoint(args_t* args)
 {
-
     if (attach(args->pid) == -1){
         printf("Failed to attach to pid: %d\n", args->pid);
         return -1;
     }
 
+    breakpoint(args->pid, args->addr, NULL);
 
     detach(args->pid);
     return 0;
